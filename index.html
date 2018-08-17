@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <title>Squeesh</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+  </head>
+  <body style="overscroll-behavior: contain;">
+  <script>
+let sounds = [
+  new Audio("meh.wav"),
+  new Audio("mrh.wav"),
+  new Audio("mih.wav"),
+  new Audio("mehmehmeh.wav"),
+  new Audio("mehhhh.wav"),
+  new Audio("mh.wav"),
+  new Audio("mhmhmh.wav"),
+  new Audio("me.wav"),
+  new Audio("mimama.wav"),
+];
+
+function choose(from) {
+  return from[Math.floor(Math.random() * from.length)];
+}
+
+var x = 0;
+var vel = 0;
+function squeesh() {
+  choose(sounds).play();
+  vel = 20;
+}
+
+var lastFrame = null;
+function updateAnimation(timestamp) {
+  if (!lastFrame) {
+    lastFrame = timestamp;
+  }
+  delta = timestamp - lastFrame;
+  lastFrame = timestamp;
+  x = x + vel * (delta / 100);
+  vel = 0.94 * vel - (x / 10);
+  var rotation = x;
+  document
+    .getElementById("layer1")
+    .setAttribute(
+      "transform",
+      "rotate(" + rotation + " 25.4 25.4) translate(-2.6245035,-241.25561)");
+  var passed = timestamp - lastFrame;
+  window.requestAnimationFrame(updateAnimation);
+}
+window.requestAnimationFrame(updateAnimation);
+  </script>
+  <div style="width: 100vw">
+    <!--<img id="squeeshy" onclick="squeesh()" src="squeeshy.svg" style="height: 80%; width: 80%; object-fit: contain; display: block; margin: auto auto;"/>-->
+<svg
+   id="squeeshy"
+   style="height: 90%; width: 90%; object-fit: contain; display: block; margin: auto auto;"
+   onclick="squeesh()"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 50.800001 50.800001"
+   version="1.1"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="squeeshy.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1007">
+      <stop
+         style="stop-color:#fffa4e;stop-opacity:1;"
+         offset="0"
+         id="stop1003" />
+      <stop
+         style="stop-color:#ffa330;stop-opacity:1"
+         offset="1"
+         id="stop1005" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1007"
+       id="linearGradient1009"
+       x1="21.617807"
+       y1="259.26617"
+       x2="43.162449"
+       y2="282.22821"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(2.7675337,-6.2660884)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="43.589004"
+     inkscape:cy="95.251525"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1918"
+     inkscape:window-height="1061"
+     inkscape:window-x="0"
+     inkscape:window-y="17"
+     inkscape:window-maximized="0"
+     units="in" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="rotate(0 25.4 25.4) translate(-2.6245035,-241.25561)">
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:url(#linearGradient1009);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.70000005;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+       d="m 49.80697,268.761 c 0,12.06503 -8.645276,14.35573 -21.782466,14.35573 -13.13719,0 -21.7824668,-2.2907 -21.7824668,-14.35573 0,-12.06504 8.6452768,-20.3893 21.7824668,-20.3893 13.13719,0 21.782466,8.32426 21.782466,20.3893 z"
+       id="path815"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss" />
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.69999981;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+       inkscape:transform-center-x="-10.885363"
+       inkscape:transform-center-y="-17.881297"
+       d="m 34.853084,263.33664 c -0.20442,1.16048 0.833808,2.01714 3.472877,3.02384 2.639067,1.0067 3.474185,0.98043 3.678607,-0.18007 0.20442,-1.16048 -0.566539,-2.11552 -3.205607,-3.12223 -2.639067,-1.0067 -3.741457,-0.88203 -3.945877,0.27846 z"
+       id="path817-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss" />
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:#fbfbfb;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+       d="m 33.235845,269.73976 c 1e-6,0.59749 -2.333196,0.43274 -5.211341,0.43274 -2.878145,0 -5.211342,0.16475 -5.211341,-0.43274 -1e-6,-0.5975 2.333196,-1.08187 5.211341,-1.08187 2.878145,0 5.211342,0.48437 5.211341,1.08187 z"
+       id="path862"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscsc" />
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.69999981;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+       inkscape:transform-center-x="-10.885363"
+       inkscape:transform-center-y="17.881297"
+       d="m 14.038293,266.12605 c -0.20442,-1.16049 0.833808,-2.01715 3.472877,-3.02385 2.639067,-1.0067 3.474185,-0.98042 3.678607,0.18007 0.20442,1.16048 -0.566539,2.11553 -3.205607,3.12223 -2.639067,1.0067 -3.741457,0.88203 -3.945877,-0.27845 z"
+       id="path817-7-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss" />
+    <path
+       style="fill:#ffd040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.89999992;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 15.273879,279.3596 c 0,0 -5.186399,5.12123 0.720334,5.90364 5.90673,0.78241 4.706175,-4.69447 4.706175,-4.69447"
+       id="path901"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#ffa330;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 41.698453,279.3596 c 0,0 5.186398,5.12123 -0.720334,5.90364 -5.90673,0.78241 -4.706175,-4.69447 -4.706175,-4.69447"
+       id="path901-6"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
+  </div>
+  </body>
+</html>
