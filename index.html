@@ -25,7 +25,7 @@ var x = 0;
 var vel = 0;
 function squeesh() {
   choose(sounds).play();
-  vel = 20;
+  vel = choose([20, -20]);
 }
 
 var lastFrame = null;
@@ -42,7 +42,7 @@ function updateAnimation(timestamp) {
     .getElementById("layer1")
     .setAttribute(
       "transform",
-      "rotate(" + rotation + " 25.4 25.4) translate(-2.6245035,-241.25561)");
+      "rotate(" + rotation.toFixed(2) + " 25.4 25.4) translate(-2.6245035,-241.25561)");
   var passed = timestamp - lastFrame;
   window.requestAnimationFrame(updateAnimation);
 }
